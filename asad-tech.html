@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="google-site-verification" content="VnXLN7lmtx-80R80kwqLlkmaA7_oxX06RmkvQq5LvLA" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<title>Asad Tech — Technology for Everyone</title>
+<meta name="description" content="Asad Tech is a technology company founded by Muhammad Asad in Pakistan. We build useful software and digital products — Asad Tools, AuraBill and Tech AI Assistant." />
+<meta name="keywords" content="Asad Tech, Asad Tools, AuraBill, Tech AI Assistant, Muhammad Asad, software company Pakistan" />
+<meta name="author" content="Asad Tech" />
+<meta name="robots" content="index, follow" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Asad Tech" />
+<meta property="og:title" content="Asad Tech — Technology for Everyone" />
+<meta property="og:description" content="Asad Tech builds useful software and digital products people can trust. Home of Asad Tools, AuraBill and Tech AI Assistant." />
+<meta property="og:url" content="https://asad-tech-ashen.vercel.app/" />
+<meta property="og:image" content="https://asad-tech-ashen.vercel.app/logo-lockup.png" />
+<meta name="twitter:image" content="https://asad-tech-ashen.vercel.app/logo-lockup.png" />
+<link rel="canonical" href="https://asad-tech-ashen.vercel.app/" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Asad Tech — Technology for Everyone" />
+<meta name="twitter:description" content="Asad Tech builds useful software and digital products people can trust. Home of Asad Tools, AuraBill and Tech AI Assistant." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Asad Tech",
+  "url": "https://asad-tech-ashen.vercel.app/",
+  "logo": "https://asad-tech-ashen.vercel.app/logo-mark.png",
+  "description": "Asad Tech is a technology company building useful software and digital products.",
+  "founder": {
+    "@type": "Person",
+    "name": "Muhammad Asad",
+    "jobTitle": "Founder and Owner"
+  }
+}
+</script>
+<style>
+  :root{
+    --navy:#0F2A4A;
+    --navy-deep:#0A1E36;
+    --bg:#FFFFFF;
+    --bg-soft:#F5F7FA;
+    --surface:#FFFFFF;
+    --ink:#14202E;
+    --ink-soft:#45566B;
+    --line:#DCE3EC;
+    --header-bg:rgba(255,255,255,.96);
+    --wa:#1FA855;
+    --wa-dark:#178A44;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0B1522;
+      --bg-soft:#0F1D30;
+      --surface:#122539;
+      --ink:#EDF2F8;
+      --ink-soft:#A9BACD;
+      --line:#22374F;
+      --header-bg:rgba(11,21,34,.96);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Inter", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  img,svg{display:block}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--header-bg);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(6px);
+  }
+  .nav{
+    display:flex;align-items:center;gap:28px;
+    min-height:64px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    text-decoration:none;font-weight:700;font-size:20px;
+    color:var(--ink);letter-spacing:-.01em;white-space:nowrap;
+    min-height:44px;
+  }
+  .brand .word-tech{color:var(--navy)}
+  @media (prefers-color-scheme: dark){ .brand .word-tech{color:#fff} }
+  .nav-links{
+    display:flex;align-items:center;gap:4px;margin-left:auto;
+  }
+  .nav-links a{
+    text-decoration:none;color:var(--ink-soft);
+    font-size:15px;font-weight:500;
+    padding:10px 14px;min-height:44px;
+    display:inline-flex;align-items:center;border-radius:6px;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--bg-soft)}
+  .nav-cta{
+    margin-left:12px;
+    background:var(--navy);color:#fff !important;
+    border-radius:6px;font-weight:600;
+  }
+  .nav-cta:hover{background:var(--navy-deep) !important}
+  .menu-btn{
+    display:none;margin-left:auto;
+    background:none;border:1px solid var(--line);border-radius:6px;
+    width:44px;height:44px;cursor:pointer;
+    align-items:center;justify-content:center;color:var(--ink);
+  }
+  @media (max-width:760px){
+    .menu-btn{display:inline-flex}
+    .nav-links{
+      display:none;position:absolute;left:0;right:0;top:64px;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:var(--bg);border-bottom:1px solid var(--line);
+      padding:8px 16px 16px;
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 8px;border-radius:0;border-bottom:1px solid var(--line)}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-cta{margin:12px 0 0;justify-content:center}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--navy);
+    color:#fff;
+    padding:52px 0 60px;
+  }
+  .hero-brand{
+    display:flex;align-items:center;gap:9px;
+    font-size:14px;font-weight:700;color:#fff;
+    text-transform:uppercase;letter-spacing:.14em;
+    margin:0 0 18px;
+  }
+  .hero h1{
+    font-size:52px;line-height:1.08;margin:0 0 16px;
+    font-weight:800;letter-spacing:-.02em;
+  }
+  .hero p.lead{
+    font-size:18px;color:#C7D3E2;max-width:620px;margin:0 0 32px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    text-decoration:none;font-weight:600;font-size:16px;
+    padding:13px 26px;min-height:48px;border-radius:6px;
+    border:1px solid transparent;cursor:pointer;
+  }
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-deep);color:#fff}
+  .btn-outline{border-color:#5B7492;color:#fff;background:transparent}
+  .btn-outline:hover{border-color:#fff}
+  .hero-products{
+    margin-top:40px;padding-top:24px;
+    border-top:1px solid #2A4767;
+    display:flex;gap:12px 36px;flex-wrap:wrap;
+    font-size:15px;color:#9FB2C8;
+  }
+  .hero-products strong{color:#fff;font-weight:600}
+  .hero-products a{color:inherit;text-decoration:none}
+  .hero-products a:hover{text-decoration:underline}
+
+  /* ---------- Sections ---------- */
+  section{padding:84px 0}
+  section.soft{background:var(--bg-soft)}
+  .section-head{max-width:640px;margin-bottom:44px}
+  .section-head h2{
+    font-size:34px;line-height:1.2;margin:0 0 12px;
+    font-weight:800;letter-spacing:-.02em;
+  }
+  .section-head p{margin:0;color:var(--ink-soft);font-size:17px}
+  .rule{width:44px;height:3px;background:var(--navy);margin-bottom:20px}
+
+  /* ---------- Products ---------- */
+  .grid-3{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  @media (max-width:900px){ .grid-3{grid-template-columns:1fr} }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:32px 28px;
+    display:flex;flex-direction:column;
+  }
+  .card-logo{
+    width:56px;height:56px;border-radius:12px;
+    object-fit:cover;margin-bottom:22px;flex:none;
+  }
+  .card h3{font-size:21px;margin:0 0 6px;font-weight:800;letter-spacing:-.02em}
+  .card .card-sub{
+    font-size:13px;font-weight:600;color:var(--navy);
+    text-transform:uppercase;letter-spacing:.06em;margin:0 0 12px;
+  }
+  @media (prefers-color-scheme: dark){ .card .card-sub{color:#C7D3E2} }
+  .card p{margin:0 0 24px;color:var(--ink-soft);font-size:15.5px;flex:1}
+  .card-link{
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:600;font-size:15.5px;color:var(--navy);
+    text-decoration:none;min-height:44px;
+  }
+  @media (prefers-color-scheme: dark){ .card-link{color:#fff} }
+  .card-link:hover{text-decoration:underline}
+  .card-link .arrow{transition:transform .15s ease}
+  .card-link:hover .arrow{transform:translateX(3px)}
+
+  /* ---------- About ---------- */
+  .about-text{max-width:720px}
+  .about-text h2{font-size:34px;line-height:1.2;margin:0 0 18px;font-weight:800;letter-spacing:-.02em}
+  .about-text p{color:var(--ink-soft);font-size:17px;margin:0 0 16px}
+  .about-text p strong{color:var(--ink)}
+  .about-text .founder-line{
+    color:var(--ink);font-weight:500;
+    border-top:1px solid var(--line);
+    padding-top:18px;margin-top:26px;
+  }
+  .mission{
+    margin-top:44px;background:var(--navy);color:#fff;
+    border-radius:10px;padding:36px 40px;
+  }
+  .mission h3{margin:0 0 10px;font-size:22px;font-weight:800;letter-spacing:-.02em}
+  .mission p{margin:0;color:#C7D3E2;font-size:17px;max-width:760px}
+  .mission .rule{margin-bottom:16px;background:#fff}
+
+  /* ---------- News ---------- */
+  .news-card{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:10px;padding:28px;
+    display:flex;flex-direction:column;
+  }
+  .news-date{
+    font-size:13px;font-weight:600;color:var(--navy);
+    text-transform:uppercase;letter-spacing:.06em;margin:0 0 12px;
+  }
+  @media (prefers-color-scheme: dark){ .news-date{color:#C7D3E2} }
+  .news-card h3{font-size:19px;margin:0 0 10px;font-weight:800;letter-spacing:-.02em;line-height:1.35}
+  .news-card p{margin:0 0 20px;color:var(--ink-soft);font-size:15.5px;flex:1}
+  .news-card a{
+    font-weight:600;font-size:15px;color:var(--navy);text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;min-height:44px;
+  }
+  @media (prefers-color-scheme: dark){ .news-card a{color:#fff} }
+  .news-card a:hover{text-decoration:underline}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--navy);color:#fff}
+  .contact .section-head h2{color:#fff}
+  .contact .section-head p{color:#C7D3E2}
+  .contact-row{
+    display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+    background:var(--navy-deep);border:1px solid #2A4767;
+    border-radius:10px;padding:32px 36px;
+  }
+  .contact-row .c-text{flex:1;min-width:240px}
+  .contact-row .c-text h3{margin:0 0 6px;font-size:21px;font-weight:800;letter-spacing:-.02em}
+  .contact-row .c-text p{margin:0;color:#C7D3E2;font-size:16px}
+  .contact-row .c-text .c-number{
+    font-size:20px;font-weight:700;color:#fff;letter-spacing:.01em;
+    margin-top:10px;
+  }
+  .btn-wa{background:var(--wa);color:#fff}
+  .btn-wa:hover{background:var(--wa-dark)}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy-deep);color:#9FB2C8;
+    padding:52px 0 36px;font-size:15px;
+  }
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;
+    padding-bottom:36px;border-bottom:1px solid #2A4767;margin-bottom:28px;
+  }
+  @media (max-width:760px){ .footer-grid{grid-template-columns:1fr;gap:28px} }
+  .footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:19px;margin-bottom:12px}
+  footer h4{color:#fff;font-size:15px;margin:0 0 14px;font-weight:600}
+  footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+  footer ul a{
+    color:#9FB2C8;text-decoration:none;
+    display:inline-flex;align-items:center;min-height:36px;
+  }
+  footer ul a:hover{color:#fff;text-decoration:underline}
+  .footer-bottom{
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    font-size:14px;
+  }
+
+  @media (max-width:640px){
+    .hero{padding:44px 0 52px}
+    .hero h1{font-size:38px}
+    .hero p.lead{font-size:16.5px}
+    section{padding:60px 0}
+    .section-head h2,.about-text h2{font-size:28px}
+    .mission{padding:28px 24px}
+    .contact-row{padding:26px 22px}
+    .btn{width:100%;justify-content:center}
+    .hero-actions .btn{width:auto}
+    .contact-row .btn{width:100%}
+  }
+  /* ---------- Waitlist ---------- */
+  .waitlist-btn{background:none;border:0;padding:0;font:inherit;cursor:pointer;text-align:left}
+  .modal-overlay{position:fixed;inset:0;z-index:100;background:rgba(10,30,54,.72);display:flex;align-items:center;justify-content:center;padding:20px}
+  .modal-overlay[hidden]{display:none}
+  .modal{position:relative;background:var(--surface);color:var(--ink);border-radius:12px;max-width:440px;width:100%;padding:32px 28px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+  .modal h3{margin:0 0 6px;font-size:22px;font-weight:800;letter-spacing:-.02em}
+  .modal-sub{margin:0 0 22px;color:var(--ink-soft);font-size:15px}
+  .modal-close{position:absolute;top:12px;right:14px;background:none;border:0;font-size:26px;line-height:1;cursor:pointer;color:var(--ink-soft);width:44px;height:44px}
+  .modal form{display:grid;gap:14px}
+  .modal label{display:grid;gap:6px;font-size:14px;font-weight:600}
+  .modal input{font:inherit;font-size:15px;padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);width:100%}
+  .modal input:focus{outline:2px solid var(--navy);outline-offset:1px;border-color:var(--navy)}
+  .modal .btn{width:100%;justify-content:center}
+  .form-error{margin:0;color:#B42318;font-size:14px;font-weight:500}
+  .form-note{margin:0;color:var(--ink-soft);font-size:13px;text-align:center}
+  .waitlist-done p{margin:0 0 10px;color:var(--ink-soft)}
+  .waitlist-done p:first-child{color:var(--ink);font-size:17px}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .card-link .arrow{transition:none}
+  }
+
+  /* ---------- AuraGallery owner + security views ---------- */
+  .ag-view{position:fixed;inset:0;z-index:200;background:var(--bg);color:var(--ink);overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .ag-view[hidden]{display:none}
+  .ag-topbar{position:sticky;top:0;background:var(--navy);color:#fff;padding:14px 0;z-index:5}
+  .ag-topbar .wrap{display:flex;align-items:center;gap:14px}
+  .ag-topbar .brand{font-weight:800;font-size:18px}
+  .ag-topbar .brand span{color:#fff}
+  .ag-topbar a.ag-back{margin-left:auto;color:#C7D3E2;text-decoration:none;font-size:15px;font-weight:600;min-height:44px;display:inline-flex;align-items:center}
+  .ag-topbar a.ag-back:hover{color:#fff;text-decoration:underline}
+  .ag-main{padding:28px 0 60px}
+  .ag-main h1{font-size:24px;margin:0 0 6px;font-weight:800;letter-spacing:-.02em}
+  .ag-main h2{font-size:19px;margin:28px 0 10px;font-weight:800}
+  .ag-main p.lead{color:var(--ink-soft);margin:0 0 18px}
+  .ag-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;margin-top:16px}
+  .ag-card label{display:block;font-weight:600;font-size:14px;margin:12px 0 4px}
+  .ag-card input[type=email],.ag-card input[type=password],.ag-card input[type=search]{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+  .ag-card input:focus{outline:2px solid var(--navy);outline-offset:1px}
+  .ag-btn{display:inline-block;border:0;cursor:pointer;font-family:inherit;font-size:16px;font-weight:600;padding:12px 22px;border-radius:8px;background:var(--navy);color:#fff;min-height:48px;margin-top:16px}
+  .ag-btn:hover{background:var(--navy-deep)}
+  .ag-btn-navy{background:var(--navy);color:#fff}
+  .ag-btn-navy:hover{background:var(--navy-deep);color:#fff}
+  .ag-btn-ghost{background:transparent;color:var(--ink-soft);border:1px solid var(--line);padding:10px 16px;min-height:44px;margin-top:0}
+  .ag-btn:disabled{opacity:.6;cursor:default}
+  .ag-error{color:#B42318;font-weight:600;margin-top:12px}
+  .ag-note{color:var(--ink-soft);font-size:14px;margin-top:12px}
+  .ag-count{font-size:56px;font-weight:800;line-height:1;color:var(--navy)}
+  @media (prefers-color-scheme: dark){.ag-count{color:#fff}}
+  .ag-count-label{color:var(--ink-soft);font-size:15px;margin-top:4px}
+  .ag-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .ag-row .spacer{flex:1}
+  .ag-toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:16px}
+  .ag-toolbar input[type=search]{flex:1;min-width:200px}
+  .ag-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:15px}
+  .ag-table th,.ag-table td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  .ag-table th{color:var(--ink-soft);font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+  .ag-table td small{color:var(--ink-soft)}
+  .ag-empty{color:var(--ink-soft);padding:18px 4px}
+  .ag-pill{display:inline-block;padding:2px 10px;border-radius:20px;font-size:13px;font-weight:700}
+  .ag-pill-blocked{background:#FDECEA;color:#C0392B}
+  .ag-verdict{border-radius:12px;padding:20px;margin-top:16px;text-align:center}
+  .ag-verdict-safe{background:#E8F7EE;color:#178A44}
+  .ag-verdict-blocked{background:#FDECEA;color:#C0392B}
+  .ag-verdict strong{font-size:24px;display:block}
+  .ag-score{display:grid;grid-template-columns:90px 1fr 56px;gap:10px;align-items:center;margin-top:8px;font-size:14px}
+  .ag-bar{height:10px;background:var(--bg-soft);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+  .ag-bar i{display:block;height:100%;background:var(--navy)}
+  .ag-preview{max-width:320px;border-radius:10px;border:1px solid var(--line);margin-top:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Asad Tech — home">
+      <img src="logo-mark.png" alt="" width="26" height="26" />
+      <span>Asad&nbsp;<span class="word-tech">Tech</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="#products">Products</a>
+      <a href="#about">About Us</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="https://wa.me/923039929254" target="_blank" rel="noopener">WhatsApp Us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="wrap">
+      <p class="hero-brand">
+        <img src="logo-mark-navy.png" alt="" width="18" height="18" />
+        <span>Asad Tech</span>
+      </p>
+      <h1>Technology for Everyone</h1>
+      <p class="lead">Asad Tech builds software people can trust — a digital store, billing software for shops, and an AI assistant. Three live products, one company.</p>
+      <div class="hero-actions">
+        <a class="btn btn-navy" href="#products">See Our Products</a>
+        <a class="btn btn-outline" href="#about">About Asad Tech</a>
+      </div>
+      <div class="hero-products" aria-label="Our products">
+        <a href="https://asad-tools-liard.vercel.app/" target="_blank" rel="noopener"><strong>Asad Tools</strong> — Digital Store</a>
+        <a href="https://aurabill.vercel.app/" target="_blank" rel="noopener"><strong>AuraBill</strong> — Billing Software</a>
+        <a href="https://tech-ai-assistant-v2.vercel.app/" target="_blank" rel="noopener"><strong>Tech AI Assistant</strong> — AI Chat</a>
+        <a href="#products"><strong>AuraGallery</strong> — Coming Soon</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <section id="products">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="rule"></div>
+        <h2>Our Products</h2>
+        <p>Three live products from one company — Asad Tools, AuraBill and Tech AI Assistant. And one more coming soon: AuraGallery.</p>
+      </div>
+      <div class="grid-3">
+
+        <article class="card">
+          <img class="card-logo" src="logo-mark.png" alt="Asad Tools logo" width="56" height="56" />
+          <h3>Asad Tools</h3>
+          <p class="card-sub">Digital Store</p>
+          <p>Muse AI accounts 1B to 30B, Rs 250 to Rs 1,000, 20-day guarantee. Website packages from Rs 5,000. Order on WhatsApp.</p>
+          <a class="card-link" href="https://asad-tools-liard.vercel.app/" target="_blank" rel="noopener">Visit Asad Tools <span class="arrow" aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card">
+          <img class="card-logo" src="data:image/png;base64,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" alt="AuraBill logo" width="56" height="56" />
+          <h3>AuraBill</h3>
+          <p class="card-sub">Billing Software</p>
+          <p>Billing software for shops. Plans Rs 1,000 to Rs 7,500 a month, 1 to 12 months. First customer: Sheikh Ikram Cycle Store, Lahore.</p>
+          <a class="card-link" href="https://aurabill.vercel.app/" target="_blank" rel="noopener">Visit AuraBill <span class="arrow" aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card">
+          <img class="card-logo" src="logo-mark.png" alt="Tech AI Assistant logo" width="56" height="56" />
+          <h3>Tech AI Assistant</h3>
+          <p class="card-sub">AI Chat Assistant</p>
+          <p>AI chat assistant. Free 30,000 tokens every day. Ask in Roman Urdu or English.</p>
+          <a class="card-link" href="https://tech-ai-assistant-v2.vercel.app/" target="_blank" rel="noopener">Visit Tech AI Assistant <span class="arrow" aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card">
+          <img class="card-logo" src="logo-mark.png" alt="AuraGallery logo" width="56" height="56" />
+          <h3>AuraGallery</h3>
+          <p class="card-sub">Cloud Gallery — Coming Soon</p>
+          <p>Your photos and videos, safe in the cloud. Free up space on your phone — 1GB free for 3 days (free trial). Join the waitlist.</p>
+          <button class="card-link waitlist-btn" type="button" data-waitlist-open>Join Waitlist <span class="arrow" aria-hidden="true">→</span></button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="soft">
+    <div class="wrap">
+      <div class="about-text">
+        <div class="rule"></div>
+        <h2>About Us</h2>
+        <p><strong>Asad Tech</strong> is a technology company based in Pakistan. It has three live products: Asad Tools, an online store for digital products; AuraBill, billing software for shops; and Tech AI Assistant, an AI chat assistant.</p>
+        <p>Asad Tools sells Muse AI accounts and website packages, ordered on WhatsApp. AuraBill is used by shops for bills, stock, customers and payments, and is already in use at its first customer, Sheikh Ikram Cycle Store in Lahore. Tech AI Assistant answers questions in Roman Urdu and English, with a free daily allowance.</p>
+        <p class="founder-line">Founded by <strong>Muhammad Asad</strong>, Founder &amp; Owner, Asad Tech — based in Pakistan. Contact on WhatsApp 03039929254.</p>
+      </div>
+      <div class="mission">
+        <div class="rule"></div>
+        <h3>Our Mission</h3>
+        <p>Useful technology, simple for everyone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="rule"></div>
+        <h2>News &amp; Updates</h2>
+        <p>The latest news from Asad Tech and our products.</p>
+      </div>
+      <div class="grid-3">
+
+        <article class="news-card">
+          <p class="news-date">November 2026</p>
+          <h3>AuraBill is live — and serving its first shop</h3>
+          <p>Our billing software AuraBill is now live. Sheikh Ikram Cycle Store in Lahore became AuraBill's first customer, using it for shop billing and records.</p>
+          <a href="https://aurabill.vercel.app/" target="_blank" rel="noopener">Open AuraBill <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="news-card">
+          <p class="news-date">November 2026</p>
+          <h3>Asad Tools store is live</h3>
+          <p>Our digital store Asad Tools is live. Customers can order Muse AI accounts and website packages, and the store is now listed on Google Search.</p>
+          <a href="https://asad-tools-liard.vercel.app/" target="_blank" rel="noopener">Open Asad Tools <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="news-card">
+          <p class="news-date">November 2026</p>
+          <h3>Tech AI Assistant launched</h3>
+          <p>Tech AI Assistant, our AI chat assistant, has launched. It answers questions in simple, clear language and is free to try.</p>
+          <a href="https://tech-ai-assistant-v2.vercel.app/" target="_blank" rel="noopener">Try the Assistant <span aria-hidden="true">→</span></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="rule"></div>
+        <h2>Contact Us</h2>
+        <p>Have a question about our products, or want a website for your business? Talk to us on WhatsApp — we reply in simple, clear words.</p>
+      </div>
+      <div class="contact-row">
+        <div class="c-text">
+          <h3>Message us on WhatsApp</h3>
+          <p>The fastest way to reach Asad Tech for orders, support and website work.</p>
+          <p class="c-number">0303 9929254</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <a class="btn btn-wa" href="https://wa.me/923039929254" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.8-1.7-.9-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.1 2.2-.2 3.9a11.6 11.6 0 0 0 4.5 4.2c1.7.8 2.4.9 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3Z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <a class="btn btn-outline" href="https://whatsapp.com/channel/0029VbE9Yfu7T8bgu89L7S3x" target="_blank" rel="noopener">
+            Follow WhatsApp Channel
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="logo-mark-navy.png" alt="" width="22" height="22" />
+          <span>Asad Tech</span>
+        </div>
+        <p style="margin:0;max-width:340px">Technology for Everyone. Asad Tech builds useful software and digital products people can trust.</p>
+      </div>
+      <nav aria-label="Products">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="https://asad-tools-liard.vercel.app/" target="_blank" rel="noopener">Asad Tools</a></li>
+          <li><a href="https://aurabill.vercel.app/" target="_blank" rel="noopener">AuraBill</a></li>
+          <li><a href="https://tech-ai-assistant-v2.vercel.app/" target="_blank" rel="noopener">Tech AI Assistant</a></li>
+          <li><a href="#products">AuraGallery — Coming Soon</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#news">News &amp; Updates</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://wa.me/923039929254" target="_blank" rel="noopener">WhatsApp: 0303 9929254</a></li>
+          <li><a href="https://whatsapp.com/channel/0029VbE9Yfu7T8bgu89L7S3x" target="_blank" rel="noopener">WhatsApp Channel</a></li>
+          <li><a href="#owner">AuraGallery Owner Panel</a></li>
+          <li><a href="#security">Security Assistant Test</a></li>
+          <li><a href="#terms">Terms of Use</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© Asad Tech — All Rights Reserved</span>
+      <span>Founded by Muhammad Asad · Pakistan</span>
+    </div>
+  </div>
+</footer>
+
+  <!-- Waitlist -->
+  <div class="modal-overlay" id="waitlistModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="waitlistTitle">
+      <button class="modal-close" type="button" data-waitlist-close aria-label="Close">×</button>
+      <h3 id="waitlistTitle">Join the AuraGallery Waitlist</h3>
+      <p class="modal-sub">1GB free — 3 din ka trial. Launch hote hi aap ko email aaye ga.</p>
+      <form id="waitlistForm" novalidate>
+        <label>Your name<input type="text" name="name" required autocomplete="name" placeholder="Muhammad Asad" /></label>
+        <label>Email<input type="email" name="email" required autocomplete="email" placeholder="you@example.com" /></label>
+        <label>Phone / WhatsApp number<input type="tel" name="phone" required autocomplete="tel" placeholder="0300 1234567" /></label>
+        <p class="form-error" id="waitlistError" hidden></p>
+        <button class="btn btn-navy" type="submit" id="waitlistSubmit">Register for Waitlist</button>
+        <p class="form-note">Your photos stay private. We never share your details.</p>
+      </form>
+      <div class="waitlist-done" id="waitlistDone" hidden>
+        <p><strong>You're on the waitlist!</strong></p>
+        <p>Check your email — AuraGallery ki poori detail bhej di hai. Launch hote hi aap ko batayein ge.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AuraGallery Owner Panel -->
+  <div class="ag-view" id="ownerView" hidden>
+    <div class="ag-topbar">
+      <div class="wrap">
+        <div class="brand">ASAD <span>TECH</span> &nbsp;·&nbsp; AuraGallery</div>
+        <a class="ag-back" href="#">← Website</a>
+      </div>
+    </div>
+    <div class="ag-main">
+      <div class="wrap">
+        <section class="ag-card" id="agLoginBox">
+          <h1>Owner Panel</h1>
+          <p class="lead">Waitlist aur Security Flags dekhne ke liye login karein.</p>
+          <button class="ag-btn ag-btn-navy" type="button" id="agGoogleBtn">Google se login karein</button>
+          <p class="ag-error" id="agLoginError" hidden></p>
+          <p class="ag-note">Sirf owner login kar sakta hai — Google account 3brotherawm@gmail.com. List sirf login ke baad dikhti hai.</p>
+        </section>
+
+        <section id="agPanelBox" hidden>
+          <div class="ag-row">
+            <div>
+              <h1 style="margin:0">AuraGallery Waitlist</h1>
+              <p class="lead" style="margin:4px 0 0">Jo log waitlist par aaye — ek tap par.</p>
+            </div>
+            <div class="spacer"></div>
+            <button class="ag-btn ag-btn-ghost" id="agSignOutBtn" type="button">Sign out</button>
+          </div>
+
+          <div class="ag-card">
+            <div class="ag-count" id="agWaitlistCount">–</div>
+            <div class="ag-count-label">log waitlist par hain</div>
+            <div class="ag-toolbar">
+              <input type="search" id="agSearchBox" placeholder="Naam, email ya phone se dhoondhein…" />
+              <button class="ag-btn ag-btn-ghost" id="agRefreshBtn" type="button">Refresh</button>
+            </div>
+            <p class="ag-error" id="agListError" hidden></p>
+            <div style="overflow-x:auto">
+              <table class="ag-table">
+                <thead><tr><th>#</th><th>Naam</th><th>Email</th><th>Phone</th><th>Date</th></tr></thead>
+                <tbody id="agWaitlistBody"></tbody>
+              </table>
+            </div>
+            <p class="ag-empty" id="agWaitlistEmpty" hidden>Abhi koi join nahi hua — count 0 hai.</p>
+          </div>
+
+          <h2>Security Assistant — Flags</h2>
+          <div class="ag-card">
+            <p class="lead" style="margin:0 0 8px">Kharab content block hone par yahan flag aaye ga. Safe uploads yahan nahi dikhte.</p>
+            <p class="ag-error" id="agFlagsError" hidden></p>
+            <div style="overflow-x:auto">
+              <table class="ag-table">
+                <thead><tr><th>Date</th><th>Photo</th><th>Wajah</th><th>Score</th></tr></thead>
+                <tbody id="agFlagsBody"></tbody>
+              </table>
+            </div>
+            <p class="ag-empty" id="agFlagsEmpty" hidden>Koi flag nahi hai. 👍</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- AuraGallery Security Assistant — Test -->
+  <div class="ag-view" id="securityView" hidden>
+    <div class="ag-topbar">
+      <div class="wrap">
+        <div class="brand">ASAD <span>TECH</span> &nbsp;·&nbsp; AuraGallery</div>
+        <a class="ag-back" href="#">← Website</a>
+      </div>
+    </div>
+    <div class="ag-main">
+      <div class="wrap">
+        <h1>Security Assistant — Test</h1>
+        <p class="lead">Koi bhi photo choose karein — Security Assistant bataye ga ke ye photo AuraGallery ke liye theek hai ya block hogi.</p>
+        <div class="ag-card">
+          <p style="margin-top:0"><strong>Ye check aap ke phone/browser mein hota hai.</strong> Photo kahin upload nahi hoti, koi AI key nahi lagti, koi kharch nahi.</p>
+          <p class="ag-note" style="margin-top:0">Is test mein photo kahin save nahi hoti. V1 mein: BLOCKED photo upload nahi hogi aur Asad ko khabar mil jaye gi; SAFE photo upload ho jaye gi.</p>
+          <label for="agSecFile" style="display:block;font-weight:600;font-size:14px;margin:12px 0 4px">Photo choose karein</label>
+          <input type="file" id="agSecFile" accept="image/*" />
+          <img class="ag-preview" id="agSecPreview" alt="" hidden />
+          <div><button class="ag-btn ag-btn-navy" type="button" id="agSecCheckBtn" disabled>Check karo</button></div>
+          <p class="ag-note" id="agSecStatus" hidden></p>
+          <p class="ag-error" id="agSecError" hidden></p>
+          <div id="agSecResult" hidden>
+            <div class="ag-verdict" id="agSecVerdict"></div>
+            <div id="agSecScores" style="margin-top:16px"></div>
+            <p class="ag-note" id="agSecNext"></p>
+          </div>
+        </div>
+        <div class="ag-card">
+          <h2 style="margin-top:0">Ye kaise kaam karta hai?</h2>
+          <p style="margin:0">Security Assistant har photo ko check karta hai — theek ho to upload hogi, ghalat ho to photo <strong>block</strong> ho jati hai. Ye check free aur open-source hai (nsfwjs), aur is mein koi AI key nahi lagti.</p>
+          <p class="ag-note">Sachai: ye check phone mein hota hai, is liye koi technical banda is ko bypass kar sakta hai. Is liye V1 ke baad server-side check bhi aaye ga. 20 logon ka test group aap ke jan'ne wale log hain, is liye ye test ke liye kaafi hai.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AuraGallery Terms of Use -->
+  <div class="ag-view" id="termsView" hidden>
+    <div class="ag-topbar">
+      <div class="wrap">
+        <div class="brand">ASAD <span>TECH</span> &nbsp;·&nbsp; AuraGallery</div>
+        <a class="ag-back" href="#">← Website</a>
+      </div>
+    </div>
+    <div class="ag-main">
+      <div class="wrap">
+        <h1>Terms of Use — AuraGallery</h1>
+        <p class="lead">AuraGallery by Asad Tech — your photos and videos, safe in the cloud.</p>
+        <div class="ag-card">
+          <h2 style="margin-top:0">1. What you can store</h2>
+          <p style="margin:0">Your own photos and videos. 1GB free trial (3 days) for every user. Paid plans: Starter 50GB Rs 299/month, Plus 200GB Rs 799/month, Pro 1TB Rs 2,499/month.</p>
+          <h2>2. What is not allowed</h2>
+          <p style="margin:0">No adult or sexual content, no illegal content, and no photos or videos of other people without their permission. Content that breaks these rules is blocked on upload and the account is closed.</p>
+          <h2>3. Privacy</h2>
+          <p style="margin:0">Only you can see your photos. No human looks at them. An automated safety check runs on every upload to enforce rule 2.</p>
+          <h2>4. Your account</h2>
+          <p style="margin:0">One phone number, one account. You are responsible for keeping your login safe. Asad Tech can update these terms at any time.</p>
+          <h2>5. Plan khatam hone par</h2>
+          <p style="margin:0">Plan lete waqt aap is baat par sign (agree) karte hain: "Maine ye plan liya hai. Agar main agle mahine pay na karun to plan khatam hone ke 48 ghante baad mera data delete ho jayega (mera loss)." 48 ghante mein aap renew ya download kar sakte hain. Ye rule trial aur paid plan — dono par lagta hai.</p>
+          <p class="ag-note">Questions? WhatsApp 0303 9929254.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  (function () {
+    var btn = document.getElementById('menuBtn');
+    var links = document.getElementById('navLinks');
+    if (!btn || !links) return;
+    btn.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    links.addEventListener('click', function (e) {
+      if (e.target.closest('a')) {
+        links.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
+<script>
+  (function () {
+    var SUPABASE_URL = "https://bcmclbdwavswrnlielmw.supabase.co";
+    var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjbWNsYmR3YXZzd3JubGllbG13Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ3MTczNzAsImV4cCI6MjExMDI5MzM3MH0.yhUm4m54frnP6L7Ju-yXyCQ_tD2G5nGjqd_dURMyjkE";
+    var modal = document.getElementById('waitlistModal');
+    var form = document.getElementById('waitlistForm');
+    var done = document.getElementById('waitlistDone');
+    var errorEl = document.getElementById('waitlistError');
+    var submitBtn = document.getElementById('waitlistSubmit');
+    if (!modal || !form) return;
+    function openModal(){ modal.hidden = false; document.body.style.overflow = 'hidden'; }
+    function closeModal(){ modal.hidden = true; document.body.style.overflow = ''; }
+    document.querySelectorAll('[data-waitlist-open]').forEach(function (b){ b.addEventListener('click', openModal); });
+    document.querySelectorAll('[data-waitlist-close]').forEach(function (b){ b.addEventListener('click', closeModal); });
+    modal.addEventListener('click', function (e){ if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function (e){ if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+    function showError(msg){ errorEl.textContent = msg; errorEl.hidden = false; }
+    form.addEventListener('submit', async function (e){
+      e.preventDefault();
+      errorEl.hidden = true;
+      var name = form.elements['name'].value.trim();
+      var email = form.elements['email'].value.trim().toLowerCase();
+      var phone = form.elements['phone'].value.trim();
+      if (!name || !email || !phone){ showError('Please fill your name, email and phone number.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showError('Please enter a valid email address.'); return; }
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Registering…';
+      try {
+        var client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        var res = await client.from('auragallery_waitlist').insert({ name: name, email: email, phone: phone });
+        if (res.error){
+          if (/duplicate key/i.test(res.error.message || '')){ showError('This email is already on the waitlist.'); }
+          else { showError('Could not save. Please try again.'); }
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Register for Waitlist';
+          return;
+        }
+        var details = 'Assalam o Alaikum ' + name + '!\n\nShukriya — aap AuraGallery by Asad Tech ki waitlist par aa gaye hain!\n\nAuraGallery kya hai?\nAuraGallery aap ki cloud gallery hai — apni photos aur videos yahan save karein, phir phone se delete kar dein. Phone khali, yaadein safe.\n\nAap ko kya mile ga:\n- 1GB FREE storage — 3-day trial\n- Paid plans: Starter 50GB Rs 299/month, Plus 200GB Rs 799/month, Pro 1TB Rs 2,499/month\n- Aap ki photos sirf aap dekh sakte hain — hum bhi nahi dekhte\n- Delete ki hui photo 30 din Trash mein rehti hai\n\nLaunch hote hi aap ko email aaye ga.\n\nKoi sawal ho to WhatsApp karein: 0303 9929254\n\n— Asad Tech (AuraGallery by Asad Tech)';
+        try {
+          await fetch('https://formsubmit.co/ajax/3brotherawm@gmail.com', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({ name: name, email: email, phone: phone, _subject: 'New AuraGallery Waitlist Registration', _template: 'table', _captcha: 'false', _autoresponse: details })
+          });
+        } catch (mailErr) { /* registration is saved; email is best-effort */ }
+        form.hidden = true;
+        done.hidden = false;
+      } catch (err) {
+        showError('Could not save. Please try again.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Register for Waitlist';
+      }
+    });
+  })();
+</script>
+<script>
+(function () {
+  /* ---------- View router: #owner / #security ---------- */
+  var ownerView = document.getElementById('ownerView');
+  var securityView = document.getElementById('securityView');
+  var termsView = document.getElementById('termsView');
+  function showView() {
+    var h = location.hash;
+    var showOwner = h === '#owner' || h.indexOf('access_token') !== -1 || location.search.indexOf('code=') !== -1;
+    var showSec = h === '#security';
+    var showTerms = h === '#terms';
+    ownerView.hidden = !showOwner;
+    securityView.hidden = !showSec;
+    termsView.hidden = !showTerms;
+    document.body.style.overflow = (showOwner || showSec || showTerms) ? 'hidden' : '';
+    if (showOwner) { ownerInit(); }
+    if (showSec) { securityInit(); }
+    if (showOwner || showSec || showTerms) { window.scrollTo(0, 0); }
+  }
+  window.addEventListener('hashchange', showView);
+
+  /* ---------- Owner Panel ---------- */
+  var AG_SUPABASE_URL = "https://bcmclbdwavswrnlielmw.supabase.co";
+  var AG_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjbWNsYmR3YXZzd3JubGllbG13Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ3MTczNzAsImV4cCI6MjExMDI5MzM3MH0.yhUm4m54frnP6L7Ju-yXyCQ_tD2G5nGjqd_dURMyjkE";
+  var AG_OWNER_EMAIL = '3brotherawm@gmail.com';
+  var ownerStarted = false;
+  var ownerClient = null;
+  var ownerRows = [];
+
+  var loginBox = document.getElementById('agLoginBox');
+  var panelBox = document.getElementById('agPanelBox');
+  var googleBtn = document.getElementById('agGoogleBtn');
+  var loginError = document.getElementById('agLoginError');
+  var listError = document.getElementById('agListError');
+  var flagsError = document.getElementById('agFlagsError');
+  var countEl = document.getElementById('agWaitlistCount');
+  var bodyEl = document.getElementById('agWaitlistBody');
+  var emptyEl = document.getElementById('agWaitlistEmpty');
+  var flagsBody = document.getElementById('agFlagsBody');
+  var flagsEmpty = document.getElementById('agFlagsEmpty');
+  var searchBox = document.getElementById('agSearchBox');
+
+  function showLogin() { loginBox.hidden = false; panelBox.hidden = true; }
+  function showPanel() { loginBox.hidden = true; panelBox.hidden = false; }
+  function showLoginError(msg) { loginError.textContent = msg; loginError.hidden = false; }
+  function fmtDate(iso) {
+    try { return new Date(iso).toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }); }
+    catch (e) { return iso || ''; }
+  }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function renderRows() {
+    var q = (searchBox.value || '').trim().toLowerCase();
+    var list = ownerRows.filter(function (r) {
+      if (!q) return true;
+      return (r.name + ' ' + r.email + ' ' + r.phone).toLowerCase().indexOf(q) !== -1;
+    });
+    bodyEl.innerHTML = list.map(function (r, i) {
+      return '<tr><td>' + (i + 1) + '</td><td>' + esc(r.name) + '</td><td>' + esc(r.email) + '</td><td>' + esc(r.phone) + '</td><td><small>' + esc(fmtDate(r.created_at)) + '</small></td></tr>';
+    }).join('');
+    emptyEl.hidden = list.length !== 0;
+  }
+  async function loadWaitlist() {
+    listError.hidden = true;
+    var res = await ownerClient.from('auragallery_waitlist').select('name, email, phone, created_at').order('created_at', { ascending: false });
+    if (res.error) {
+      countEl.textContent = '–';
+      bodyEl.innerHTML = '';
+      emptyEl.hidden = true;
+      listError.textContent = 'List load nahi hui. Dobara try karein — agar phir na ho to owner permission check karein.';
+      listError.hidden = false;
+      return;
+    }
+    ownerRows = res.data || [];
+    countEl.textContent = ownerRows.length;
+    renderRows();
+  }
+  async function loadFlags() {
+    flagsError.hidden = true;
+    var res = await ownerClient.from('auragallery_flags').select('created_at, file_hash, category, score').order('created_at', { ascending: false }).limit(50);
+    if (res.error) {
+      flagsBody.innerHTML = '';
+      flagsEmpty.hidden = true;
+      flagsError.textContent = 'Flags load nahi hue. (Flags table abhi set nahi hui ho gi — waitlist phir bhi upar dikh jaye gi.)';
+      flagsError.hidden = false;
+      return;
+    }
+    var list = res.data || [];
+    flagsBody.innerHTML = list.map(function (f) {
+      return '<tr><td><small>' + esc(fmtDate(f.created_at)) + '</small></td><td><small>' + esc(f.file_hash || '') + '</small></td><td><span class="ag-pill ag-pill-blocked">' + esc(f.category || 'Flag') + '</span></td><td>' + (f.score != null ? Math.round(f.score * 100) + '%' : '') + '</td></tr>';
+    }).join('');
+    flagsEmpty.hidden = list.length !== 0;
+  }
+  async function loadAll() { await loadWaitlist(); await loadFlags(); }
+
+  function ownerInit() {
+    if (!ownerStarted) {
+      ownerStarted = true;
+      googleBtn.addEventListener('click', async function () {
+        loginError.hidden = true;
+        if (!ownerClient) { showLoginError('Supabase load nahi hua — internet check kar ke page reload karein.'); return; }
+        googleBtn.disabled = true;
+        googleBtn.textContent = 'Google khul raha hai…';
+        var res = await ownerClient.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: 'https://asad-tech-ashen.vercel.app/' } });
+        googleBtn.disabled = false;
+        googleBtn.textContent = 'Google se login karein';
+        if (res.error) { showLoginError('Google login nahi khula. Dobara try karein.'); return; }
+        if (res.data && res.data.url) { window.location.href = res.data.url; }
+      });
+      document.getElementById('agSignOutBtn').addEventListener('click', async function () {
+        if (ownerClient) { await ownerClient.auth.signOut(); }
+        ownerRows = [];
+        showLogin();
+      });
+      document.getElementById('agRefreshBtn').addEventListener('click', loadAll);
+      searchBox.addEventListener('input', renderRows);
+    }
+    if (!window.supabase) {
+      showLoginError('Supabase load nahi hua — internet check kar ke page reload karein.');
+      googleBtn.disabled = true;
+      return;
+    }
+    if (!ownerClient) {
+      ownerClient = window.supabase.createClient(AG_SUPABASE_URL, AG_SUPABASE_ANON_KEY);
+      ownerClient.auth.onAuthStateChange(function (event, session) {
+        if (event === 'SIGNED_OUT') { ownerRows = []; showLogin(); return; }
+        if ((event === 'SIGNED_IN' || event === 'INITIAL_SESSION') && session && session.user) {
+          if ((session.user.email || '').toLowerCase() === AG_OWNER_EMAIL) {
+            if (window.location.hash.indexOf('access_token') !== -1 || window.location.search.indexOf('code=') !== -1) { history.replaceState(null, '', '#owner'); }
+            showPanel();
+            loadAll();
+          } else {
+            ownerClient.auth.signOut();
+            showLoginError('Ye Google account owner nahi hai — sirf 3brotherawm@gmail.com login kar sakta hai.');
+          }
+        } else if (event === 'INITIAL_SESSION') {
+          showLogin();
+        }
+      });
+    }
+  }
+
+  /* ---------- Security Assistant test ---------- */
+  var secStarted = false;
+  var secFile = null;
+  var secScriptLoading = null;
+
+  function ensureSecScript() {
+    if (window.AuraSecurity) return Promise.resolve();
+    if (secScriptLoading) return secScriptLoading;
+    secScriptLoading = new Promise(function (resolve, reject) {
+      var s = document.createElement('script');
+      s.src = 'auragallery-security.js';
+      s.onload = function () {
+        if (window.AuraSecurity) { resolve(); }
+        else { reject(new Error('Security Assistant load nahi hua.')); }
+      };
+      s.onerror = function () { reject(new Error('Security Assistant load nahi hua. Internet check karein.')); };
+      document.head.appendChild(s);
+    });
+    secScriptLoading.catch(function () { secScriptLoading = null; });
+    return secScriptLoading;
+  }
+
+  function securityInit() {
+    if (secStarted) return;
+    secStarted = true;
+    var fileInput = document.getElementById('agSecFile');
+    var checkBtn = document.getElementById('agSecCheckBtn');
+    var preview = document.getElementById('agSecPreview');
+    var statusEl = document.getElementById('agSecStatus');
+    var errorEl = document.getElementById('agSecError');
+    var resultBox = document.getElementById('agSecResult');
+    var verdictEl = document.getElementById('agSecVerdict');
+    var scoresEl = document.getElementById('agSecScores');
+    var nextEl = document.getElementById('agSecNext');
+
+    function setStatus(t) { if (t) { statusEl.textContent = t; statusEl.hidden = false; } else { statusEl.hidden = true; } }
+    function showSecError(t) { errorEl.textContent = t; errorEl.hidden = false; }
+    function hideResult() { resultBox.hidden = true; }
+    function hideError() { errorEl.hidden = true; }
+
+    fileInput.addEventListener('change', function () {
+      var f = fileInput.files && fileInput.files[0];
+      hideResult();
+      hideError();
+      setStatus('');
+      if (!f) { secFile = null; checkBtn.disabled = true; preview.hidden = true; return; }
+      secFile = f;
+      preview.src = URL.createObjectURL(f);
+      preview.hidden = false;
+      checkBtn.disabled = false;
+    });
+
+    checkBtn.addEventListener('click', async function () {
+      if (!secFile) return;
+      checkBtn.disabled = true;
+      hideError();
+      hideResult();
+      setStatus('Check ho raha hai… (pehli baar model load hone mein thoda waqt lage ga)');
+      try {
+        await ensureSecScript();
+        var res = await window.AuraSecurity.checkFile(secFile, function (step) {
+          if (step === 'tf') { setStatus('TensorFlow load ho raha hai…'); }
+          else if (step === 'model') { setStatus('Model load ho raha hai… (pehli baar thoda waqt lage ga)'); }
+          else if (step === 'nsfw') { setStatus('Check tayyar ho raha hai…'); }
+        });
+        setStatus('');
+        var safe = res.verdict === 'safe';
+        verdictEl.className = 'ag-verdict ' + (safe ? 'ag-verdict-safe' : 'ag-verdict-blocked');
+        verdictEl.innerHTML = safe
+          ? '<strong>SAFE ✓</strong>Ye photo theek hai.'
+          : '<strong>BLOCKED ✕</strong>Ye photo theek nahi hai — upload nahi hogi.';
+        var neutral = null;
+        res.predictions.forEach(function (p) { if (p.className === 'Neutral') { neutral = p.probability; } });
+        var safePct = neutral == null ? 0 : Math.round(neutral * 1000) / 10;
+        scoresEl.innerHTML = '<div class="ag-score"><span>Safe score</span><span class="ag-bar"><i style="width:' + Math.max(safePct, 1) + '%"></i></span><span>' + safePct + '%</span></div>';
+        nextEl.textContent = safe
+          ? 'V1 mein ye photo upload ho jaye gi.'
+          : 'V1 mein ye photo upload NAHI hogi — block ho jaye gi aur Asad ko khabar mil jaye gi.';
+        resultBox.hidden = false;
+      } catch (e) {
+        setStatus('');
+        showSecError(e && e.message ? e.message : 'Check nahi ho saka. Internet check kar ke dobara try karein.');
+      }
+      checkBtn.disabled = false;
+    });
+  }
+
+  showView();
+})();
+</script>
+</body>
+</html>
