@@ -633,9 +633,12 @@
         <section class="ag-card" id="agLoginBox">
           <h1>Owner Panel</h1>
           <p class="lead">Waitlist aur Security Flags dekhne ke liye login karein.</p>
-          <button class="ag-btn ag-btn-navy" type="button" id="agGoogleBtn">Google se login karein</button>
+          <label for="agPasswordInput" style="display:block;font-weight:600;margin:0 0 6px">Password</label>
+          <input type="password" id="agPasswordInput" placeholder="Owner password" autocomplete="current-password" style="width:100%;padding:12px 14px;border:1px solid #C9D6E4;border-radius:10px;font-size:1rem;box-sizing:border-box" />
+          <div style="height:12px"></div>
+          <button class="ag-btn ag-btn-navy" type="button" id="agLoginBtn">Login karein</button>
           <p class="ag-error" id="agLoginError" hidden></p>
-          <p class="ag-note">Sirf owner login kar sakta hai — Google account 3brotherawm@gmail.com. List sirf login ke baad dikhti hai.</p>
+          <p class="ag-note">Sirf owner login kar sakta hai — password se. List sirf login ke baad dikhti hai.</p>
         </section>
 
         <section id="agPanelBox" hidden>
@@ -829,7 +832,7 @@
   var termsView = document.getElementById('termsView');
   function showView() {
     var h = location.hash;
-    var showOwner = h === '#owner' || h.indexOf('access_token') !== -1 || location.search.indexOf('code=') !== -1;
+    var showOwner = h === '#owner';
     var showSec = h === '#security';
     var showTerms = h === '#terms';
     ownerView.hidden = !showOwner;
@@ -845,14 +848,15 @@
   /* ---------- Owner Panel ---------- */
   var AG_SUPABASE_URL = "https://bcmclbdwavswrnlielmw.supabase.co";
   var AG_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjbWNsYmR3YXZzd3JubGllbG13Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ3MTczNzAsImV4cCI6MjExMDI5MzM3MH0.yhUm4m54frnP6L7Ju-yXyCQ_tD2G5nGjqd_dURMyjkE";
-  var AG_OWNER_EMAIL = '3brotherawm@gmail.com';
+  var AG_OWNER_PANEL_EMAIL = 'owner@asadtech.local';
   var ownerStarted = false;
   var ownerClient = null;
   var ownerRows = [];
 
   var loginBox = document.getElementById('agLoginBox');
   var panelBox = document.getElementById('agPanelBox');
-  var googleBtn = document.getElementById('agGoogleBtn');
+  var loginBtn = document.getElementById('agLoginBtn');
+  var passwordInput = document.getElementById('agPasswordInput');
   var loginError = document.getElementById('agLoginError');
   var listError = document.getElementById('agListError');
   var flagsError = document.getElementById('agFlagsError');
@@ -922,17 +926,21 @@
   function ownerInit() {
     if (!ownerStarted) {
       ownerStarted = true;
-      googleBtn.addEventListener('click', async function () {
+      var doLogin = async function () {
         loginError.hidden = true;
         if (!ownerClient) { showLoginError('Supabase load nahi hua — internet check kar ke page reload karein.'); return; }
-        googleBtn.disabled = true;
-        googleBtn.textContent = 'Google khul raha hai…';
-        var res = await ownerClient.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: 'https://asad-tech-ashen.vercel.app/' } });
-        googleBtn.disabled = false;
-        googleBtn.textContent = 'Google se login karein';
-        if (res.error) { showLoginError('Google login nahi khula. Dobara try karein.'); return; }
-        if (res.data && res.data.url) { window.location.href = res.data.url; }
-      });
+        var pw = (passwordInput.value || '');
+        if (!pw) { showLoginError('Password likhein.'); return; }
+        loginBtn.disabled = true;
+        loginBtn.textContent = 'Login ho raha hai…';
+        var res = await ownerClient.auth.signInWithPassword({ email: AG_OWNER_PANEL_EMAIL, password: pw });
+        loginBtn.disabled = false;
+        loginBtn.textContent = 'Login karein';
+        if (res.error) { showLoginError('Ghalat password. Dobara try karein.'); return; }
+        passwordInput.value = '';
+      };
+      loginBtn.addEventListener('click', doLogin);
+      passwordInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { doLogin(); } });
       document.getElementById('agSignOutBtn').addEventListener('click', async function () {
         if (ownerClient) { await ownerClient.auth.signOut(); }
         ownerRows = [];
@@ -943,7 +951,7 @@
     }
     if (!window.supabase) {
       showLoginError('Supabase load nahi hua — internet check kar ke page reload karein.');
-      googleBtn.disabled = true;
+      loginBtn.disabled = true;
       return;
     }
     if (!ownerClient) {
@@ -951,13 +959,12 @@
       ownerClient.auth.onAuthStateChange(function (event, session) {
         if (event === 'SIGNED_OUT') { ownerRows = []; showLogin(); return; }
         if ((event === 'SIGNED_IN' || event === 'INITIAL_SESSION') && session && session.user) {
-          if ((session.user.email || '').toLowerCase() === AG_OWNER_EMAIL) {
-            if (window.location.hash.indexOf('access_token') !== -1 || window.location.search.indexOf('code=') !== -1) { history.replaceState(null, '', '#owner'); }
+          if ((session.user.email || '').toLowerCase() === AG_OWNER_PANEL_EMAIL) {
             showPanel();
             loadAll();
           } else {
             ownerClient.auth.signOut();
-            showLoginError('Ye Google account owner nahi hai — sirf 3brotherawm@gmail.com login kar sakta hai.');
+            showLoginError('Ye account owner nahi hai — sirf owner password se login karein.');
           }
         } else if (event === 'INITIAL_SESSION') {
           showLogin();
